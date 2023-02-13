@@ -2,12 +2,13 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Job {
+public class Job extends JobField{
+
 
     private int id;
     private static int nextId = 1;
 
-    private String name;
+    private static String name;
     private Employer employer;
     private Location location;
     private PositionType positionType;
@@ -21,6 +22,31 @@ public class Job {
         id = nextId;
         nextId++;
     }
+
+
+    //create a toString method that passes the first test.
+    @Override
+    public String toString(){
+        String output = "";
+
+        output = String.format(
+                        '\n' + "ID: " + id + '\n'
+                        + "Name: " + name
+                        + '\n' +"Employer: " + employer + '\n'
+                        + "PositionType: " + positionType + '\n'
+                        + "Location: " + location + '\n'
+                        + "Core Competency: " + coreCompetency + '\n'
+
+
+                );
+        if(output.isEmpty()){
+            return "Missing information!";
+
+        }else
+        //Alexa - Finish coding 'toString handles cases in which fields are empty'
+
+        return output;
+    };
 
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
@@ -46,9 +72,10 @@ public class Job {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Job)) return false;
         Job job = (Job) o;
-        return id == job.id;
+        return id == job.getId();
+        //Alexa - check if .getId() works here
     }
 
 
