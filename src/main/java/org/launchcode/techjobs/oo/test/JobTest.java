@@ -115,13 +115,13 @@ public class JobTest {
         String output = String.format(
                 '\n' +"ID: %d\n"
                 +"Name: %s\n" + "Employer: %s\n"
-                + "PositionType: %s\n"
                 + "Location: %s\n"
+                + "Position Type: %s\n"
                 + "Core Competency: %s\n",
 
                 jobTestLabelData.getId(), jobTestLabelData.getName(),
-                jobTestLabelData.getEmployer(), jobTestLabelData.getPositionType(),
-                jobTestLabelData.getLocation(), jobTestLabelData.getCoreCompetency()
+                jobTestLabelData.getEmployer(), jobTestLabelData.getLocation(),
+                jobTestLabelData.getPositionType(), jobTestLabelData.getCoreCompetency()
 
 
         );
