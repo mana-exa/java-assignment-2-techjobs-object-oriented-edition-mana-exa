@@ -31,6 +31,11 @@ public class JobTest {
         assertNotEquals(jobTestOne.getId(), jobTestTwo.getId());
 
 
+
+
+
+
+
     }
 
     @Test
@@ -41,11 +46,19 @@ public class JobTest {
                             new PositionType("Quality control"),
                             new CoreCompetency("Persistence"));
 
-        assertTrue(true);
+        assertTrue(jobTestThree.getName().equals("Product tester"));
         assertEquals(jobTestThree.getName(), "Product tester");
+
+        assertTrue(String.valueOf(jobTestThree.getEmployer()).equals("ACME"));
         assertEquals(String.valueOf(jobTestThree.getEmployer()), "ACME");
+
+        assertTrue(String.valueOf(jobTestThree.getLocation()).equals("Desert"));
         assertEquals(String.valueOf(jobTestThree.getLocation()), "Desert");
+
+        assertTrue(String.valueOf(jobTestThree.getPositionType()).equals("Quality control"));
         assertEquals(String.valueOf(jobTestThree.getPositionType()), "Quality control");
+
+        assertTrue(String.valueOf(jobTestThree.getCoreCompetency()).equals("Persistence"));
         assertEquals(String.valueOf(jobTestThree.getCoreCompetency()), "Persistence");
     }
 
@@ -64,6 +77,7 @@ public class JobTest {
                 new CoreCompetency("Fast Learner"));
 
         assertNotEquals(jobTestFour, jobTestFive);
+        assertFalse(jobTestFour.equals(jobTestFive));
 
     }
 
@@ -118,17 +132,21 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField(){
         Job testEmptyJob = new Job(
-                "",
-                new Employer(" "),
-                new Location("My House"),
-                new PositionType("Front End"),
-                new CoreCompetency("Beginner")
+                "Web Developer",
+                new Employer(""),
+                new Location("StL"),
+                new PositionType(""),
+                new CoreCompetency("Java")
         );
 
-        String output = testEmptyJob.getEmployer().toString();
 
 
-        assertFalse(output, false);
+        String output = testEmptyJob.toString();
+
+
+
+
+        assertEquals(String.valueOf(testEmptyJob.getEmployer().toString()), "Data not available");
 //        assertEquals(output, "Data not available.");
 
 

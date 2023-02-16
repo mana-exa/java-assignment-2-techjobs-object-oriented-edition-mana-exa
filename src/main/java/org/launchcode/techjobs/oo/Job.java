@@ -29,34 +29,44 @@ public class Job extends JobField{
     public String toString(){
         String output = "";
 
-        output = String.format(
-                        '\n' + "ID: " + id + '\n'
+
+        if(name.equals("")) {
+            setName("Data not available");
+            }
+
+        if(getEmployer().toString().isEmpty()) {
+                setEmployer(new Employer("Data not available"));
+        }
+
+        if(getPositionType().toString().isEmpty()) {
+            setPositionType(new PositionType("Data not available"));
+
+            }
+        if(getLocation().toString().isEmpty()) {
+                setLocation(new Location("Data not available"));
+            }
+        if(getCoreCompetency().toString().isEmpty()) {
+            setCoreCompetency(new CoreCompetency("Data not available"));
+        }
+        return String.format(
+                '\n' + "ID: " + id + '\n'
                         + "Name: " + name
                         + '\n' +"Employer: " + employer + '\n'
-                        + "PositionType: " + positionType + '\n'
                         + "Location: " + location + '\n'
+                        + "Position Type: " + positionType + '\n'
+
                         + "Core Competency: " + coreCompetency + '\n'
 
 
-                );
-        if(name.equals("")) {
-            return "Data not available";
-            }
-            if(getEmployer().toString().isEmpty()) {
-                return "Data not available";
-            }if(getPositionType().toString().isEmpty()) {
-                return "Data not available";
-            }if(getLocation().toString().isEmpty()) {
-                return "Data not available";
-            }if(getCoreCompetency().toString().isEmpty()) {
-                return "Data not available";
-            }else
+        );
+
+
 
 
 
         //Alexa - Finish coding 'toString handles cases in which fields are empty'
 
-        return output;
+
     };
 
 
