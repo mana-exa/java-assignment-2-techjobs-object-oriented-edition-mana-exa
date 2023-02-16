@@ -119,11 +119,17 @@ public class JobTest {
     public void testToStringHandlesEmptyField(){
         Job testEmptyJob = new Job(
                 "",
-                new Employer("LaunchCode"),
+                new Employer(" "),
                 new Location("My House"),
                 new PositionType("Front End"),
                 new CoreCompetency("Beginner")
         );
+
+        String output = testEmptyJob.getEmployer().toString();
+
+
+        assertFalse(output, false);
+//        assertEquals(output, "Data not available.");
 
 
 

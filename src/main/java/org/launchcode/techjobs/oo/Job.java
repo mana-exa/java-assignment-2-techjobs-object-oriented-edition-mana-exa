@@ -39,10 +39,21 @@ public class Job extends JobField{
 
 
                 );
-        if(output.isEmpty()){
-            return "Missing information!";
+        if(name.equals("")) {
+            return "Data not available";
+            }
+            if(getEmployer().toString().isEmpty()) {
+                return "Data not available";
+            }if(getPositionType().toString().isEmpty()) {
+                return "Data not available";
+            }if(getLocation().toString().isEmpty()) {
+                return "Data not available";
+            }if(getCoreCompetency().toString().isEmpty()) {
+                return "Data not available";
+            }else
 
-        }else
+
+
         //Alexa - Finish coding 'toString handles cases in which fields are empty'
 
         return output;
